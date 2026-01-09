@@ -92,7 +92,10 @@
 </head>
   <body class="antialiased scroll-smooth">
     <div id="root"></div>
-    <!-- Use relative path for GitHub Pages compatibility -->
+    <!-- 
+      IMPORTANT: Using ./index.tsx (relative path) is mandatory for GitHub Pages 
+      project sites to ensure Vite can bundle the code correctly. 
+    -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
