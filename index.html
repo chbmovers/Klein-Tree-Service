@@ -91,8 +91,8 @@
   <body class="antialiased scroll-smooth">
     <div id="root"></div>
     <!-- 
-      Using ./index.tsx (relative path) is the critical fix for GitHub Pages.
-      Absolute paths like /index.tsx fail on project-specific repositories.
+      Using ./index.tsx (relative path) is the critical fix for loading.
+      The importmap was removed as it conflicts with modern build environments.
     -->
     <script type="module" src="./index.tsx"></script>
   </body>
