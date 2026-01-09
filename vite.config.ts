@@ -7,14 +7,14 @@ declare var process: any;
 
 export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
-  // We set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd(), '');
   
   return {
+    // base: './' ensures all assets are referenced relatively, 
+    // fixing the blank screen issue on GitHub Pages.
+    base: './',
     plugins: [react()],
     define: {
-      // This performs a literal string replacement for 'process.env.API_KEY' in the source code.
-      // This satisfies the Gemini SDK's requirement for environment variable access.
       'process.env.API_KEY': JSON.stringify(env.API_KEY || process.env.API_KEY || '')
     }
   };
